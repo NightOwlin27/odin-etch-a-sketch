@@ -20,6 +20,8 @@ body {
     align-items: center;
     gap: 1em;
 
+    width: 60rem;
+    height: 60rem;
     margin: 25vh auto;
     border: 3px solid purple;
 
@@ -27,11 +29,14 @@ body {
 
 .row {
     display: flex;
-    border: 2px solid blue;
+    border: 5px solid blue;
+    border-radius: 10px;
     gap: 1em;
+    width: 6rem;
+    height: 6rem;
 }
 
-.square {
+.boxes {
     width: 6rem;
     height: 6rem;
     border: 5px solid red;

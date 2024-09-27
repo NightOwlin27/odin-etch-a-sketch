@@ -1,38 +1,39 @@
 const container = document.querySelector(".container");
 const promptBtn = document.querySelector(".prompt.btn");
 const clearBtn = document.querySelector(".clear.btn");
-// const squares = document.querySelectorAll(".boxes");
 
 const boxRows = [];
 
 
+clearBtn.addEventListener('click', function () {
 
-  clearBtn.addEventListener('click', function() {
-      
-  })
+  const squares = document.querySelectorAll(".boxes");
 
+  squares.forEach(square => {
 
+    square.style.backgroundColor = '';
 
- function getStyles () {
+    });
+  });
 
-        const squares = document.querySelectorAll(".boxes");
+function getStyles () {
 
-        squares.forEach(square => {
+  const squares = document.querySelectorAll(".boxes");
 
-            square.addEventListener('mouseenter', function() {
-            this.style.backgroundColor = 'green'
-        });
+      squares.forEach(square => {
+
+          square.addEventListener('mouseenter', function() {
+          this.style.backgroundColor = 'green'
+      });
     
-            square.addEventListener('mouseleave', function() {
-            this.style.backgroundColor = 'blue'
-        }); 
+          square.addEventListener('mouseleave', function() {
+          this.style.backgroundColor = 'blue'
+      }); 
 // Review diff between mouse leave/enter vs in/out
-     });
-};
-
+    });
+  };
 
 // Might have to separate the mouse in/out event listeners into their own function later.
-
 
 promptBtn.addEventListener('click', function () {
 
@@ -66,7 +67,7 @@ promptBtn.addEventListener('click', function () {
       getStyles();
 
   } else if (input > 100) {
-          alert("Unit maximum is 100")
+          alert("Unit maximum is 100");
           return;
   }
 });

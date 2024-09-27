@@ -1,11 +1,16 @@
 const container = document.querySelector(".container");
-const btn = document.querySelector(".btn");
 const promptBtn = document.querySelector(".prompt.btn");
-
-const rows = `<div class='row'></div>`;
-const boxes = `<div class='boxes></div>`;
+const clearBtn = document.querySelector(".clear.btn");
+// const squares = document.querySelectorAll(".boxes");
 
 const boxRows = [];
+
+
+
+  clearBtn.addEventListener('click', function() {
+      
+  })
+
 
 
  function getStyles () {
@@ -21,7 +26,7 @@ const boxRows = [];
             square.addEventListener('mouseleave', function() {
             this.style.backgroundColor = 'blue'
         }); 
-
+// Review diff between mouse leave/enter vs in/out
      });
 };
 
@@ -33,7 +38,7 @@ promptBtn.addEventListener('click', function () {
 
   let input = Number(prompt('How many boxes per side would you like?'));
 
-  if (input < 100) {
+  if (input <= 100) {
 
     container.innerHTML = '';
 

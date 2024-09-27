@@ -19,27 +19,33 @@ body {
     /* justify-content: flex-end; */
     align-items: center;
     /* gap: 1em; */
+    /* flex-wrap: wrap; */
 
     width: 60rem;
     height: 60rem;
+    /* width: 960px;
+    height: 960px; */
     margin: 25vh auto;
     border: 3px solid purple;
+    flex: 1;
 
 }
 
 .rows {
     display: flex;
-    border: 5px solid blue;
-    border-radius: 10px;
-    gap: 1em;
+    /* border: 5px solid blue;
+    border-radius: 10px; */
+    /* gap: 1em; */
     /* width: 6rem;
     height: 6rem; */
+    /* min-height: 9.5px; */
+    min-width: 955px;
+    flex: 1;
 }
 
 .boxes {
-    width: 6rem;
-    height: 6rem;
-    border: 5px solid red;
+    border: 1px solid red;
     border-radius: 10px;
+    flex: 1 1 0;
 
 }

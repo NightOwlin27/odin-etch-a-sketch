@@ -4,37 +4,6 @@ const clearBtn = document.querySelector(".clear.btn");
 
 const boxRows = [];
 
-
-clearBtn.addEventListener('click', function () {
-
-  const squares = document.querySelectorAll(".boxes");
-
-  squares.forEach(square => {
-
-    square.style.backgroundColor = '';
-
-    });
-  });
-
-function getStyles () {
-
-  const squares = document.querySelectorAll(".boxes");
-
-      squares.forEach(square => {
-
-          square.addEventListener('mouseenter', function() {
-          this.style.backgroundColor = 'green'
-      });
-    
-          square.addEventListener('mouseleave', function() {
-          this.style.backgroundColor = 'blue'
-      }); 
-// Review diff between mouse leave/enter vs in/out
-    });
-  };
-
-// Might have to separate the mouse in/out event listeners into their own function later.
-
 promptBtn.addEventListener('click', function () {
 
   let input = Number(prompt('How many boxes per side would you like?'));
@@ -50,7 +19,7 @@ promptBtn.addEventListener('click', function () {
       container.appendChild(row);
       boxRows.push(row); 
 
-    } 
+    }; 
 
       boxRows.forEach(row => { 
 
@@ -60,8 +29,7 @@ promptBtn.addEventListener('click', function () {
           box.className = 'boxes';
           row.appendChild(box);
 
-      }
-
+      };
     });
 
       getStyles();
@@ -69,5 +37,42 @@ promptBtn.addEventListener('click', function () {
   } else if (input > 100) {
           alert("Unit maximum is 100");
           return;
-  }
+  };
 });
+
+clearBtn.addEventListener('click', function () {
+
+  const boxes = document.querySelectorAll(".boxes");
+
+  boxes.forEach(box => {
+
+    box.style.backgroundColor = '';
+    box.style.border = '1px solid rgb(28, 25, 25)';
+    box.style.borderRadius = '10px';
+    box.style.opacity = '1';
+    });
+
+    getStyles();
+    
+  });
+
+function getStyles () {
+
+  const boxes = document.querySelectorAll(".boxes");
+
+      boxes.forEach(box => {
+
+        const randomColor = `rgb(${Math.floor(Math.random() * 256)}, 
+                                 ${Math.floor(Math.random() * 256)}, 
+                                 ${Math.floor(Math.random() * 256)})`;
+
+          box.addEventListener('mouseenter', function() {
+          this.style.backgroundColor = 'white';
+      });
+    
+          box.addEventListener('mouseleave', function() {
+          this.style.backgroundColor = randomColor;
+          this.style.opacity += '.1';
+      }); 
+    });
+  };
